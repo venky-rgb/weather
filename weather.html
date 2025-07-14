@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CloudMate Weather</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .bg-image {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .bg-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      width: 250px;
+    }
+
+    .click, .clicked {
+      padding: 10px 15px;
+      margin: 10px 5px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .click {
+      background-color: #8ab5b8;
+      color: white;
+    }
+
+    .clicked {
+      background-color: #b9bec7;
+      color: black;
+    }
+
+    .weatherInfo {
+      position: relative;
+      margin-top: 30px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    img.weather-icon {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image">
+    <img src="https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg" alt="Weather Background" />
+    <div class="overlay">
+      <h1>Welcome to CloudMate</h1>
+      <input type="text" class="textInput" placeholder="Enter Location...!" onkeydown="if(event.key==='Enter') findWeather()" />
+      <button class="click" onclick="findWeather()">Submit</button>
+      <button class="click" onclick="resetWeather()">Reset</button>
+
+      <div class="weatherInfo"></div>
+    </div>
+  </div>
+
+  <script src="script.js">
+    
+  </script>
+</body>
+</html>
